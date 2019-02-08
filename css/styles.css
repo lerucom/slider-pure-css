@@ -1,0 +1,148 @@
+.slider {
+    position: relative;
+    width: 680px;
+    height: 150px;
+    margin: 20px auto;
+    padding: 0 0 20px 0;
+}
+
+.slider input[name="switch"] {
+    display: none;
+}
+
+.switch {
+    position: absolute;
+    text-align: center;
+    bottom: -40px;
+    width: 100%;
+}
+
+.switch label {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    cursor: pointer;
+    margin: 0 3px;
+    border-radius: 50%;
+    border: 2px solid #929295;
+}
+
+#btn1:checked ~ .switch label[for="btn1"] {
+    border-radius: 50%;
+    border: 5px solid #4169E1;
+    width: 5px;
+    height: 5px;
+}
+
+#btn2:checked ~ .switch label[for="btn2"] {
+    border-radius: 50%;
+    border: 5px solid #4169E1;
+    width: 5px;
+    height: 5px;
+}
+
+#btn3:checked ~ .switch label[for="btn3"] {
+    border-radius: 50%;
+    border: 5px solid #4169E1;
+    width: 5px;
+    height: 5px;
+}
+
+#btn1:checked ~ .slider-inner .slides {
+    transform: translate(0);
+}
+
+#btn2:checked ~ .slider-inner .slides {
+    transform: translate(-680px);
+}
+
+#btn3:checked ~ .slider-inner .slides {
+    transform: translate(-1360px);
+}
+
+.slider-inner {
+    position: relative;
+    width: 680px;
+    height: auto;
+    overflow: hidden;
+}
+
+.slides {
+    position: relative;
+    width: 1000%;
+    height: auto;
+    top: -10px;
+    margin-top: 20px;
+    transition: all, .5s;
+}
+
+.wrap {
+    width: 150px;
+    height: 150px;
+    margin: 10px;
+    float: left;
+    overflow: hidden;
+    background-color: white;
+    transition: all;
+}
+
+.wrap img {
+    width: 100%;
+    height: 100%;
+}
+
+.wrap a {
+    cursor: default;
+}
+
+p {
+    font-size: 10px;
+    text-align: left;
+    margin: 5px;
+}
+
+.wrap:hover {
+    width: 150px;
+    height: auto;
+    margin: 10px 10px;
+    box-shadow: 2px 2px 4px 0 rgba(146, 146, 149, 0.8);
+    transform: scale(1.1);
+}
+
+.modal {
+    background: #fff;
+    left: 50%;
+    margin: -20%;
+    position: absolute;
+    top: -1200%;
+    width: auto;
+    overflow: hidden;
+    box-shadow: 0 0 20px #000, 0 0 0 1000px rgba(146, 146, 149, 0.8);
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+.modal:target ~ * {
+    pointer-events: none;
+    z-index: -1;
+}
+
+.modal:target {
+    top: 50%;
+    transition: all;
+    -moz-transition: all;
+    -webkit-transition: all;
+}
+
+.modal .btn {
+    position: absolute;
+    font-weight: bold;
+    font-size: 3em;
+    color: #000000;
+    text-decoration: none;
+    width: 20px;
+    height: 20px;
+    top: -2%;
+    right: 2%;
+}
